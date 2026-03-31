@@ -160,8 +160,8 @@ void handle_orientation(enum Orientation orientation, const char* monitor_id) {
     else {
         if (secondary != NULL) {
             char cmd[512];
-            snprintf(cmd, sizeof(cmd), "hyprctl --batch \"keyword monitor %s,transform,%d ; keyword monitor %s,%dx%d@120,%dx%d,%d,%d ; keyword monitor %s,transform,%d ; keyword input:touchdevice:transform %d ; keyword input:tablet:transform %d\"", 
-                output, orientation_transform, secondary, primary_width, primary_height, secondary_x, secondary_y, scale, orientation_transform, secondary, orientation_transform, orientation_transform, orientation_transform);
+            snprintf(cmd, sizeof(cmd), "hyprctl --batch \"keyword monitor %s,transform,%d ; keyword monitor %s,%dx%d@120,%dx%d,%d ; keyword input:touchdevice:transform %d ; keyword input:tablet:transform %d\"", 
+                output, orientation_transform, secondary, primary_width, primary_height, secondary_x, secondary_y, scale, orientation_transform, orientation_transform);
             printf("DEBUG: %s\n", cmd);
             system(cmd);
         } else {
