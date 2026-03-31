@@ -97,13 +97,15 @@ void system_fmt(char* format, ...) {
 int get_secondary_x_offset(enum Orientation orientation) {
     if (orientation == Normal || orientation == BottomUp) {
         return 0;
-    } else {
+    } else if (orientation == LeftUp) {
         return -primary_height;
+    } else {
+        return primary_width;
     }
 }
 
 int get_secondary_y_offset(enum Orientation orientation) {
-    if (orientation == Normal || orientation == BottomUp) {
+    if (orientation == Normal) {
         return primary_height;
     } else {
         return 0;
