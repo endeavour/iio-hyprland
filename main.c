@@ -123,44 +123,44 @@ void handle_orientation(enum Orientation orientation, const char* monitor_id) {
     
     if (rotate_master_layout == 1) {
         if (orientation == Normal) {
-            system_fmt("hyprctl --batch \"keyword monitor %s,transform,%d ; keyword monitor %s,%dx%d@120,%dx%d,%d,%.2g ; keyword monitor %s,transform,%d ; keyword input:touchdevice:transform %d ; keyword input:tablet:transform %d ; keyword workspace m[%s], layoutopt:orientation:left\"", 
+            system_fmt("hyprctl --batch \"keyword monitor %s,transform,%d ; keyword monitor %s,%dx%d@120,%dx%d,%d,%.1f ; keyword monitor %s,transform,%d ; keyword input:touchdevice:transform %d ; keyword input:tablet:transform %d ; keyword workspace m[%s], layoutopt:orientation:left\"", 
                 output, orientation_transform, secondary ? secondary : "", primary_width, primary_height, secondary_x, secondary_y, orientation_transform, scale, secondary ? secondary : "", orientation_transform, orientation_transform, orientation_transform, monitor_id);
         }
         else if (orientation == LeftUp) {
-            system_fmt("hyprctl --batch \"keyword monitor %s,transform,%d ; keyword monitor %s,%dx%d@120,%dx%d,%d,%.2g ; keyword monitor %s,transform,%d ; keyword input:touchdevice:transform %d ; keyword input:tablet:transform %d ; keyword workspace m[%s], layoutopt:orientation:top\"", 
+            system_fmt("hyprctl --batch \"keyword monitor %s,transform,%d ; keyword monitor %s,%dx%d@120,%dx%d,%d,%.1f ; keyword monitor %s,transform,%d ; keyword input:touchdevice:transform %d ; keyword input:tablet:transform %d ; keyword workspace m[%s], layoutopt:orientation:top\"", 
                 output, orientation_transform, secondary ? secondary : "", primary_width, primary_height, secondary_x, secondary_y, orientation_transform, scale, secondary ? secondary : "", orientation_transform, orientation_transform, orientation_transform, monitor_id);
         }
         else if (orientation == BottomUp) {
-            system_fmt("hyprctl --batch \"keyword monitor %s,transform,%d ; keyword monitor %s,%dx%d@120,%dx%d,%d,%.2g ; keyword monitor %s,transform,%d ; keyword input:touchdevice:transform %d ; keyword input:tablet:transform %d ; keyword workspace m[%s], layoutopt:orientation:left\"", 
+            system_fmt("hyprctl --batch \"keyword monitor %s,transform,%d ; keyword monitor %s,%dx%d@120,%dx%d,%d,%.1f ; keyword monitor %s,transform,%d ; keyword input:touchdevice:transform %d ; keyword input:tablet:transform %d ; keyword workspace m[%s], layoutopt:orientation:left\"", 
                 output, orientation_transform, secondary ? secondary : "", primary_width, primary_height, secondary_x, secondary_y, orientation_transform, scale, secondary ? secondary : "", orientation_transform, orientation_transform, orientation_transform, monitor_id);
         }
         else {
-            system_fmt("hyprctl --batch \"keyword monitor %s,transform,%d ; keyword monitor %s,%dx%d@120,%dx%d,%d,%.2g ; keyword monitor %s,transform,%d ; keyword input:touchdevice:transform %d ; keyword input:tablet:transform %d ; keyword workspace m[%s], layoutopt:orientation:top\"", 
+            system_fmt("hyprctl --batch \"keyword monitor %s,transform,%d ; keyword monitor %s,%dx%d@120,%dx%d,%d,%.1f ; keyword monitor %s,transform,%d ; keyword input:touchdevice:transform %d ; keyword input:tablet:transform %d ; keyword workspace m[%s], layoutopt:orientation:top\"", 
                 output, orientation_transform, secondary ? secondary : "", primary_width, primary_height, secondary_x, secondary_y, orientation_transform, scale, secondary ? secondary : "", orientation_transform, orientation_transform, orientation_transform, monitor_id);
         }
     }
     else if (rotate_master_layout == 2) {
         if (orientation == Normal) {
-            system_fmt("hyprctl --batch \"keyword monitor %s,transform,%d ; keyword monitor %s,%dx%d@120,%dx%d,%d,%.2g ; keyword monitor %s,transform,%d ; keyword input:touchdevice:transform %d ; keyword input:tablet:transform %d ; keyword workspace m[%s], layoutopt:orientation:right\"", 
+            system_fmt("hyprctl --batch \"keyword monitor %s,transform,%d ; keyword monitor %s,%dx%d@120,%dx%d,%d,%.1f ; keyword monitor %s,transform,%d ; keyword input:touchdevice:transform %d ; keyword input:tablet:transform %d ; keyword workspace m[%s], layoutopt:orientation:right\"", 
                 output, orientation_transform, secondary ? secondary : "", primary_width, primary_height, secondary_x, secondary_y, orientation_transform, scale, secondary ? secondary : "", orientation_transform, orientation_transform, orientation_transform, monitor_id);
         }
         else if (orientation == LeftUp) {
-            system_fmt("hyprctl --batch \"keyword monitor %s,transform,%d ; keyword monitor %s,%dx%d@120,%dx%d,%d,%.2g ; keyword monitor %s,transform,%d ; keyword input:touchdevice:transform %d ; keyword input:tablet:transform %d ; keyword workspace m[%s], layoutopt:orientation:bottom\"", 
+            system_fmt("hyprctl --batch \"keyword monitor %s,transform,%d ; keyword monitor %s,%dx%d@120,%dx%d,%d,%.1f ; keyword monitor %s,transform,%d ; keyword input:touchdevice:transform %d ; keyword input:tablet:transform %d ; keyword workspace m[%s], layoutopt:orientation:bottom\"", 
                 output, orientation_transform, secondary ? secondary : "", primary_width, primary_height, secondary_x, secondary_y, orientation_transform, scale, secondary ? secondary : "", orientation_transform, orientation_transform, orientation_transform, monitor_id);
         }
         else if (orientation == BottomUp) {
-            system_fmt("hyprctl --batch \"keyword monitor %s,transform,%d ; keyword monitor %s,%dx%d@120,%dx%d,%d,%.2g ; keyword monitor %s,transform,%d ; keyword input:touchdevice:transform %d ; keyword input:tablet:transform %d ; keyword workspace m[%s], layoutopt:orientation:right\"", 
+            system_fmt("hyprctl --batch \"keyword monitor %s,transform,%d ; keyword monitor %s,%dx%d@120,%dx%d,%d,%.1f ; keyword monitor %s,transform,%d ; keyword input:touchdevice:transform %d ; keyword input:tablet:transform %d ; keyword workspace m[%s], layoutopt:orientation:right\"", 
                 output, orientation_transform, secondary ? secondary : "", primary_width, primary_height, secondary_x, secondary_y, orientation_transform, scale, secondary ? secondary : "", orientation_transform, orientation_transform, orientation_transform, monitor_id);
         }
         else {
-            system_fmt("hyprctl --batch \"keyword monitor %s,transform,%d ; keyword monitor %s,%dx%d@120,%dx%d,%d,%.2g ; keyword monitor %s,transform,%d ; keyword input:touchdevice:transform %d ; keyword input:tablet:transform %d ; keyword workspace m[%s], layoutopt:orientation:bottom\"", 
+            system_fmt("hyprctl --batch \"keyword monitor %s,transform,%d ; keyword monitor %s,%dx%d@120,%dx%d,%d,%.1f ; keyword monitor %s,transform,%d ; keyword input:touchdevice:transform %d ; keyword input:tablet:transform %d ; keyword workspace m[%s], layoutopt:orientation:bottom\"", 
                 output, orientation_transform, secondary ? secondary : "", primary_width, primary_height, secondary_x, secondary_y, orientation_transform, scale, secondary ? secondary : "", orientation_transform, orientation_transform, orientation_transform, monitor_id);
         }
     }
     else {
         if (secondary != NULL) {
             char cmd[512];
-            snprintf(cmd, sizeof(cmd), "hyprctl --batch \"keyword monitor %s,transform,%d ; keyword monitor %s,%dx%d@120,%dx%d,%d,%.2g ; keyword monitor %s,transform,%d ; keyword input:touchdevice:transform %d ; keyword input:tablet:transform %d\"", 
+            snprintf(cmd, sizeof(cmd), "hyprctl --batch \"keyword monitor %s,transform,%d ; keyword monitor %s,%dx%d@120,%dx%d,%d,%.1f ; keyword monitor %s,transform,%d ; keyword input:touchdevice:transform %d ; keyword input:tablet:transform %d\"", 
                 output, orientation_transform, secondary, primary_width, primary_height, secondary_x, secondary_y, orientation_transform, scale, secondary, orientation_transform, orientation_transform, orientation_transform);
             printf("DEBUG: %s\n", cmd);
             system(cmd);
